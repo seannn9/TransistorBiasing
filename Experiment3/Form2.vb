@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Mysqlx
+Imports Org.BouncyCastle.Tls.Crypto.Impl.BC
 Public Class Form2
     Dim connection As MySqlConnection
     Dim cmd As MySqlCommand
@@ -13,6 +14,7 @@ Public Class Form2
     Dim f_Vre As New String("")
     Dim f_Vce As New String("")
     Dim f_Vbe As New String("")
+    Dim f_Vc As New String("")
     Dim calculated As Boolean = False
 
     Public Sub New(conn As MySqlConnection)
@@ -40,8 +42,8 @@ Public Class Form2
                 If connection.State = ConnectionState.Closed Then
                     connection.Open()
                 End If
-                cmd = New MySqlCommand("INSERT INTO " & table_name & "(RB, RC, RE, VCC, BETA, VRB, VRC, VRE, VCE, IB, IC, IE, VBE)
-                        values (@RB, @RC, @RE, @VCC, @BETA, @VRB, @VRC, @VRE, @VCE, @IB, @IC, @IE, @VBE)", connection)
+                cmd = New MySqlCommand("INSERT INTO " & table_name & "(RB, RC, RE, VCC, BETA, VRB, VRC, VRE, VCE, IB, IC, IE, VBE, VC)
+                        values (@RB, @RC, @RE, @VCC, @BETA, @VRB, @VRC, @VRE, @VCE, @IB, @IC, @IE, @VBE, @VC)", connection)
                 cmd.Parameters.AddWithValue("@RB", _Rb.Text)
                 cmd.Parameters.AddWithValue("@RC", _Rc.Text)
                 cmd.Parameters.AddWithValue("@RE", _Re.Text)
@@ -55,6 +57,7 @@ Public Class Form2
                 cmd.Parameters.AddWithValue("@IC", f_Ic)
                 cmd.Parameters.AddWithValue("@IE", f_Ie)
                 cmd.Parameters.AddWithValue("@VBE", f_Vbe)
+                cmd.Parameters.AddWithValue("@VC", f_Vc)
 
                 Dim i As Integer = cmd.ExecuteNonQuery
                 If i > 0 Then
@@ -85,6 +88,7 @@ Public Class Form2
                 Vrb.Text = "Vrb = "
                 Vrc.Text = "Vrc = "
                 Vre.Text = "Vre = "
+                Vc.Text = "Vc = "
                 calculated = False
             End If
         Catch ex As Exception
@@ -169,13 +173,15 @@ Public Class Form2
 
                 ' Calculate the emitter bias 
                 Dim Vbe As Double = 0.7
-                Dim Ib As Double = (Vcc - Vbe) / Rb
+                Dim Ib As Double = (Vcc - Vbe) / (Rb + ((Beta + 1) * Re))
                 Dim Ic As Double = Beta * Ib
                 Dim Ie As Double = Ic + Ib
-                Dim Vce As Double = Vcc - (Ic * Rc)
                 Dim Vrb As Double = Ib * Rb
                 Dim Vrc As Double = Ic * Rc
                 Dim Vre As Double = Ie * Re
+                Dim Vce As Double = Vcc - Vrc - Vre
+                Dim Vc As Double = Vcc - Vrc
+
 
                 ' Format the results
                 If Ib < 0.001 Then
@@ -255,6 +261,17 @@ Public Class Form2
                     Me.Vce.Text = "Vce = " & f_Vce
                 End If
 
+                If Vc < 0.001 Then
+                    f_Vc = Math.Round((Vc * 1000000), 2) & " µV"
+                    Me.Vc.Text = "Vc = " & f_Vc
+                ElseIf Vc < 1 Then
+                    f_Vc = Math.Round((Vc * 1000), 2) & " mV"
+                    Me.Vc.Text = "Vc = " & f_Vc
+                Else
+                    f_Vc = Math.Round(Vc, 2) & " V"
+                    Me.Vc.Text = "Vc = " & f_Vc
+                End If
+
                 f_Vbe = Vbe & " V"
                 _Vbe.Text = f_Vbe
                 calculated = True
@@ -262,5 +279,32 @@ Public Class Form2
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        TextBox2.Clear()
+        TextBox1.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox5.Clear()
+        _Beta.Text = "Beta"
+        _Vcc.Text = "Vcc"
+        _Rb.Text = "Rb"
+        _Rc.Text = "Rc"
+        _Re.Text = "Re"
+        _Vbe.Text = "Vbe"
+        ComboBox1.SelectedIndex = -1
+        ComboBox2.SelectedIndex = -1
+        ComboBox3.SelectedIndex = -1
+        ComboBox4.SelectedIndex = -1
+        Ib.Text = "Ib = "
+        Ic.Text = "Ic = "
+        Ie.Text = "Ie = "
+        Vce.Text = "Vce = "
+        Vrb.Text = "Vrb = "
+        Vrc.Text = "Vrc = "
+        Vre.Text = "Vre = "
+        Vc.Text = "Vc = "
+        calculated = False
     End Sub
 End Class

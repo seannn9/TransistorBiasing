@@ -26,7 +26,6 @@ Public Class Form3
             mainForm.ShowMainForm()
         End If
         Me.Close()
-        'connection.Close()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
@@ -81,21 +80,14 @@ Public Class Form3
                 End If
                 _Beta.Text = Beta
 
-                ' Check if user has selected a unit
-                'If String.IsNullOrEmpty(ComboBox1.Text) Or
-                '   String.IsNullOrEmpty(ComboBox2.Text) Or
-                '   String.IsNullOrEmpty(ComboBox4.Text) Then
-                '    MsgBox("Please select units for all values", vbExclamation, Title:="Warning")
-                'End If
-
                 ' Calculate the fixed bias 
                 Dim Vbe As Double = 0.7
                 Dim Ib As Double = (Vcc - Vbe) / Rb
                 Dim Ic As Double = Beta * Ib
                 Dim Ie As Double = Ic + Ib
-                Dim Vce As Double = Vcc - (Ic * Rc)
                 Dim Vrb As Double = Ib * Rb
                 Dim Vrc As Double = Ic * Rc
+                Dim Vce As Double = Vcc - Vrc
 
                 ' Format the results
                 If Ib < 0.001 Then
@@ -236,5 +228,30 @@ Public Class Form3
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        TextBox2.Clear()
+        TextBox1.Clear()
+        TextBox4.Clear()
+        TextBox5.Clear()
+        _Beta.Text = "Beta"
+        _Vcc.Text = "Vcc"
+        _Rb.Text = "Rb"
+        _Rc.Text = "Rc"
+
+        _Vbe.Text = "Vbe"
+        ComboBox1.SelectedIndex = -1
+        ComboBox2.SelectedIndex = -1
+
+        ComboBox4.SelectedIndex = -1
+        Ib.Text = "Ib = "
+        Ic.Text = "Ic = "
+        Ie.Text = "Ie = "
+        Vce.Text = "Vce = "
+        Vrb.Text = "Vrb = "
+        Vrc.Text = "Vrc = "
+
+        calculated = False
     End Sub
 End Class

@@ -44,6 +44,7 @@ Partial Class Form2
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Vc = New System.Windows.Forms.Label()
         Me.Vre = New System.Windows.Forms.Label()
         Me.Vrc = New System.Windows.Forms.Label()
         Me.Vrb = New System.Windows.Forms.Label()
@@ -61,6 +62,7 @@ Partial Class Form2
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -212,37 +214,37 @@ Partial Class Form2
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(8, 408)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(31, 20)
+        Me.Label2.Size = New System.Drawing.Size(32, 20)
         Me.Label2.TabIndex = 15
         Me.Label2.Text = "RC"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(8, 373)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 20)
+        Me.Label3.Size = New System.Drawing.Size(32, 20)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "RB"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(8, 443)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(30, 20)
+        Me.Label4.Size = New System.Drawing.Size(32, 20)
         Me.Label4.TabIndex = 17
         Me.Label4.Text = "RE"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(8, 478)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(42, 20)
@@ -252,16 +254,17 @@ Partial Class Form2
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(8, 513)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 20)
+        Me.Label6.Size = New System.Drawing.Size(18, 20)
         Me.Label6.TabIndex = 19
-        Me.Label6.Text = "BETA"
+        Me.Label6.Text = "β"
         '
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Vc)
         Me.Panel3.Controls.Add(Me.Vre)
         Me.Panel3.Controls.Add(Me.Vrc)
         Me.Panel3.Controls.Add(Me.Vrb)
@@ -274,73 +277,83 @@ Partial Class Form2
         Me.Panel3.Size = New System.Drawing.Size(276, 175)
         Me.Panel3.TabIndex = 20
         '
+        'Vc
+        '
+        Me.Vc.AutoSize = True
+        Me.Vc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Vc.Location = New System.Drawing.Point(137, 131)
+        Me.Vc.Name = "Vc"
+        Me.Vc.Size = New System.Drawing.Size(33, 16)
+        Me.Vc.TabIndex = 28
+        Me.Vc.Text = "Vc ="
+        '
         'Vre
         '
         Me.Vre.AutoSize = True
-        Me.Vre.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Vre.Location = New System.Drawing.Point(135, 109)
+        Me.Vre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Vre.Location = New System.Drawing.Point(135, 96)
         Me.Vre.Name = "Vre"
-        Me.Vre.Size = New System.Drawing.Size(43, 16)
+        Me.Vre.Size = New System.Drawing.Size(38, 16)
         Me.Vre.TabIndex = 27
         Me.Vre.Text = "Vre ="
         '
         'Vrc
         '
         Me.Vrc.AutoSize = True
-        Me.Vrc.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Vrc.Location = New System.Drawing.Point(137, 70)
+        Me.Vrc.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Vrc.Location = New System.Drawing.Point(137, 57)
         Me.Vrc.Name = "Vrc"
-        Me.Vrc.Size = New System.Drawing.Size(43, 16)
+        Me.Vrc.Size = New System.Drawing.Size(37, 16)
         Me.Vrc.TabIndex = 26
         Me.Vrc.Text = "Vrc ="
         '
         'Vrb
         '
         Me.Vrb.AutoSize = True
-        Me.Vrb.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Vrb.Location = New System.Drawing.Point(135, 31)
+        Me.Vrb.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Vrb.Location = New System.Drawing.Point(135, 18)
         Me.Vrb.Name = "Vrb"
-        Me.Vrb.Size = New System.Drawing.Size(43, 16)
+        Me.Vrb.Size = New System.Drawing.Size(38, 16)
         Me.Vrb.TabIndex = 25
         Me.Vrb.Text = "Vrb ="
         '
         'Vce
         '
         Me.Vce.AutoSize = True
-        Me.Vce.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Vce.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Vce.Location = New System.Drawing.Point(1, 132)
         Me.Vce.Name = "Vce"
-        Me.Vce.Size = New System.Drawing.Size(46, 16)
+        Me.Vce.Size = New System.Drawing.Size(41, 16)
         Me.Vce.TabIndex = 24
         Me.Vce.Text = "Vce ="
         '
         'Ie
         '
         Me.Ie.AutoSize = True
-        Me.Ie.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ie.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ie.Location = New System.Drawing.Point(13, 93)
         Me.Ie.Name = "Ie"
-        Me.Ie.Size = New System.Drawing.Size(34, 16)
+        Me.Ie.Size = New System.Drawing.Size(28, 16)
         Me.Ie.TabIndex = 23
         Me.Ie.Text = "Ie ="
         '
         'Ic
         '
         Me.Ic.AutoSize = True
-        Me.Ic.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ic.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ic.Location = New System.Drawing.Point(15, 54)
         Me.Ic.Name = "Ic"
-        Me.Ic.Size = New System.Drawing.Size(34, 16)
+        Me.Ic.Size = New System.Drawing.Size(27, 16)
         Me.Ic.TabIndex = 22
         Me.Ic.Text = "Ic ="
         '
         'Ib
         '
         Me.Ib.AutoSize = True
-        Me.Ib.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ib.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Ib.Location = New System.Drawing.Point(13, 15)
         Me.Ib.Name = "Ib"
-        Me.Ib.Size = New System.Drawing.Size(34, 16)
+        Me.Ib.Size = New System.Drawing.Size(28, 16)
         Me.Ib.TabIndex = 21
         Me.Ib.Text = "Ib ="
         '
@@ -358,7 +371,7 @@ Partial Class Form2
         '
         Me._Rb.AutoSize = True
         Me._Rb.BackColor = System.Drawing.Color.White
-        Me._Rb.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._Rb.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._Rb.ForeColor = System.Drawing.Color.Red
         Me._Rb.Location = New System.Drawing.Point(164, 155)
         Me._Rb.Name = "_Rb"
@@ -370,11 +383,11 @@ Partial Class Form2
         '
         Me._Rc.AutoSize = True
         Me._Rc.BackColor = System.Drawing.Color.White
-        Me._Rc.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._Rc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._Rc.ForeColor = System.Drawing.Color.Red
         Me._Rc.Location = New System.Drawing.Point(312, 143)
         Me._Rc.Name = "_Rc"
-        Me._Rc.Size = New System.Drawing.Size(30, 20)
+        Me._Rc.Size = New System.Drawing.Size(31, 20)
         Me._Rc.TabIndex = 23
         Me._Rc.Text = "Rc"
         '
@@ -382,7 +395,7 @@ Partial Class Form2
         '
         Me._Re.AutoSize = True
         Me._Re.BackColor = System.Drawing.Color.White
-        Me._Re.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._Re.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._Re.ForeColor = System.Drawing.Color.Red
         Me._Re.Location = New System.Drawing.Point(312, 279)
         Me._Re.Name = "_Re"
@@ -394,7 +407,7 @@ Partial Class Form2
         '
         Me._Vcc.AutoSize = True
         Me._Vcc.BackColor = System.Drawing.Color.White
-        Me._Vcc.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._Vcc.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._Vcc.ForeColor = System.Drawing.Color.Red
         Me._Vcc.Location = New System.Drawing.Point(286, 73)
         Me._Vcc.Name = "_Vcc"
@@ -406,11 +419,11 @@ Partial Class Form2
         '
         Me._Beta.AutoSize = True
         Me._Beta.BackColor = System.Drawing.Color.White
-        Me._Beta.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._Beta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._Beta.ForeColor = System.Drawing.Color.Red
         Me._Beta.Location = New System.Drawing.Point(121, 88)
         Me._Beta.Name = "_Beta"
-        Me._Beta.Size = New System.Drawing.Size(51, 20)
+        Me._Beta.Size = New System.Drawing.Size(47, 20)
         Me._Beta.TabIndex = 26
         Me._Beta.Text = "Beta"
         '
@@ -418,11 +431,11 @@ Partial Class Form2
         '
         Me._Vbe.AutoSize = True
         Me._Vbe.BackColor = System.Drawing.Color.White
-        Me._Vbe.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._Vbe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._Vbe.ForeColor = System.Drawing.Color.Red
         Me._Vbe.Location = New System.Drawing.Point(192, 254)
         Me._Vbe.Name = "_Vbe"
-        Me._Vbe.Size = New System.Drawing.Size(43, 20)
+        Me._Vbe.Size = New System.Drawing.Size(41, 20)
         Me._Vbe.TabIndex = 27
         Me._Vbe.Text = "Vbe"
         '
@@ -430,11 +443,11 @@ Partial Class Form2
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.White
-        Me.Label7.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label7.Location = New System.Drawing.Point(121, 68)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(51, 20)
+        Me.Label7.Size = New System.Drawing.Size(47, 20)
         Me.Label7.TabIndex = 28
         Me.Label7.Text = "Beta"
         '
@@ -442,11 +455,11 @@ Partial Class Form2
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.White
-        Me.Label8.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Label8.Location = New System.Drawing.Point(192, 234)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(43, 20)
+        Me.Label8.Size = New System.Drawing.Size(41, 20)
         Me.Label8.TabIndex = 29
         Me.Label8.Text = "Vbe"
         '
@@ -458,10 +471,20 @@ Partial Class Form2
         Me.Panel4.Size = New System.Drawing.Size(539, 18)
         Me.Panel4.TabIndex = 30
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(189, 509)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(61, 28)
+        Me.Button4.TabIndex = 31
+        Me.Button4.Text = "Clear"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(537, 594)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Label8)
@@ -543,4 +566,6 @@ Partial Class Form2
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel4 As Panel
+    Friend WithEvents Vc As Label
+    Friend WithEvents Button4 As Button
 End Class

@@ -6,6 +6,10 @@ Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         connection = New MySqlConnection
         connection.ConnectionString = "server=localhost;username=root;password=;database='" & database_name & "'"
+        If connection.State = ConnectionState.Closed Then
+            Button2.Enabled = False
+            Button3.Enabled = False
+        End If
     End Sub
 
     Public Sub ShowMainForm()
@@ -20,11 +24,15 @@ Public Class Form1
                 ConnectionStatus.Text = "Connected"
                 ConnectionStatus.ForeColor = Color.Green
                 Button1.Text = "Disconnect to Database"
+                Button2.Enabled = True
+                Button3.Enabled = True
             Else
                 connection.Close()
                 ConnectionStatus.Text = "Disconnected"
                 ConnectionStatus.ForeColor = Color.DarkRed
                 Button1.Text = "Connect to Database"
+                Button2.Enabled = False
+                Button3.Enabled = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
